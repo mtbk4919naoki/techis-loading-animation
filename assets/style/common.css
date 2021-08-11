@@ -155,12 +155,12 @@ body {
   left: 0;
   right: 0;
   margin: auto;
+  border: 2px solid rgba(0, 171, 175, 1);
 }
 
 .logo-globe > span::before {
   width: 33%;
   height: 100%;
-  border: 2px solid rgba(0, 171, 175, 1);
   border-radius: 50%;
 }
 
@@ -168,9 +168,9 @@ body {
   width: 200%;
   height: 200%;
   border-radius: 50%;
-  top: -180%;
-  left: calc(-50% - 2px);
-  border: 2px solid rgba(0, 171, 175, 1);
+  top: -190%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /* Responsive PC */
@@ -237,6 +237,12 @@ body {
 
   .page-title {
     font-size: 1.6rem;
+  }
+
+  .logo-globe > span,
+  .logo-globe > span::before,
+  .logo-globe > span::after {
+    border-width: 1px;
   }
 }
 
