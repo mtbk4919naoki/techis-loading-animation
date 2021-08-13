@@ -1,0 +1,86 @@
+@charset "utf-8";
+/**
+ * loading.css
+ * ローディングアニメーションをつくろう
+****************************************/
+
+/* ローディングスクリーン */
+.loading {
+
+}
+
+.loading.is-loaded {
+
+}
+
+.loading__animation-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 240px;
+  height: 130px;
+  position: relative;
+}
+
+.loading__animation-box > p {
+  font-size: 1.4rem;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  margin: auto;
+  color: #fff;
+}
+
+.loading__animation-box > span {
+
+}
+
+.loading__animation-box > span:nth-child(2) {
+
+}
+.loading__animation-box > span:nth-child(3) {
+
+}
+.loading__animation-box > span:nth-child(4) {
+
+}
+
+@keyframes beating {
+
+}
+
+/* 画像ローディング */
+.img-box {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.img-box::before {
+
+}
+
+@keyframes rotation {
+
+}
+
+.img-box::after {
+  content: "読み込み中...";
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto;
+  z-index: -1;
+  font-size: 1rem;
+  color: #999;
+}
+
+.img-box > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

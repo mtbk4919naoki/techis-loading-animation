@@ -12,9 +12,12 @@ window.addEventListener('load', onload);
 // DOMContentLoadedの時に呼び出す
 function ondcl() {
   console.log('DOMが読み込まれました!');
+  /* ▼step03 */
   // 10秒経ったら問答無用でローディングスクリーンを解除する
   setTimeout(unvailLoadingScreen, 10 * 1000);
+  /* ▲step03 */
 }
+
 
 // loadの時に呼び出す
 function onload() {
