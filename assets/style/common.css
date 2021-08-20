@@ -17,13 +17,13 @@
 
 /* Foundation */
 html {
-  font-size: 62.5%;
+  font-size: 62.5%; /* 1rem = 10px にするイディオム 最近はあまりつかわない*/
 }
 
 body {
   background-color: #000;
   color: #fff;
-  font-size: 1.6rem;
+  font-size: 1.6em; /* 1rem = 10px にしたので、標準文字サイズを16px相当に戻す */
   font-feature-settings: "palt";
 }
 
@@ -37,7 +37,7 @@ body {
 }
 
 .grid {
-  display: grid;
+  display: grid; /* マス目状に配置するので grid レイアウトを使用する */
   max-width: 960px;
   gap: 20px;
   margin: auto;
@@ -45,12 +45,12 @@ body {
 
 .grid__item {
   position: relative;
-  grid-column: auto / span 2;
-  height: 200px;
+  grid-column: auto / span 2; /* 分割した領域のうち横2ブロック分を使用する */
+  height: 200px; /* 高さは固定 */
 }
 
 /* Object */
-.page-title {
+.page-title { /* ページタイトル */
   text-align: center;
   background-image: linear-gradient(transparent, 60%, rgba(0, 171, 175, 0.3) 60%);
 }
@@ -63,29 +63,29 @@ body {
   margin-right: 4px;
 }
 
-.logo-globe {
+.logo-globe { /* ロゴをCSSで作成 */
   display: inline-block;
   width: 1.2em;
   height: 1.2em;
-  padding: 0.2em 0.1em 0;
+  padding: 0.2em 0.1em 0; /* 上と左右に隙間を作っておく */
   position: relative;
-  bottom: -0.2em;
+  bottom: -0.2em; /* やや上気味に表示されるので位置調整 */
   box-sizing: border-box;
 }
 
-.logo-globe > span {
+.logo-globe > span { /* 円を描く */
   display: block;
   width: 100%;
   height: 100%;
   border-radius: 100%;
-  overflow: hidden;
+  overflow: hidden; /* はみ出し分は隠す */
   border: 2px solid rgba(0, 171, 175, 1);
-  box-shadow: 0 -0.7em 0 -0.41em rgba(0, 171, 175, 1);
+  box-shadow: 0 -0.7em 0 -0.41em rgba(0, 171, 175, 1); /* 円の上の点は影で表現する */
   position: relative;
 }
 
 .logo-globe > span::before,
-.logo-globe > span::after {
+.logo-globe > span::after { /* 擬似要素の共通設定 */
   content: "";
   position: absolute;
   top: 0;
@@ -96,13 +96,13 @@ body {
   border: 2px solid rgba(0, 171, 175, 1);
 }
 
-.logo-globe > span::before {
+.logo-globe > span::before { /* 縦長の楕円を描く */
   width: 33%;
   height: 100%;
   border-radius: 50%;
 }
 
-.logo-globe > span::after {
+.logo-globe > span::after { /* 横の曲線を描く */
   width: 200%;
   height: 200%;
   border-radius: 50%;
@@ -114,16 +114,16 @@ body {
 /* Responsive PC */
 @media screen and (min-width: 960px) {
   .grid {
-    grid-template-columns: repeat(9, 1fr);
+    grid-template-columns: repeat(9, 1fr); /* 9ブロックに分割する（itemは2ブロック使用する）*/
   }
 
-  .grid__item:nth-child(8n+1) {
+  .grid__item:nth-child(8n+1) { /* 1,9番目だけ3ブロック使用して右寄せ */
     display: flex;
     justify-content: flex-end;
     grid-column: auto / span 3;
   }
 
-  .grid__item:nth-child(8n+1)>.img-box {
+  .grid__item:nth-child(8n+1) > .img-box { /* 1,9番目のインナーは幅を3分の2にすると他と同じ大きさに見える */
     width: 66.6%;
   }
 
@@ -135,16 +135,16 @@ body {
 /* Responsive TB */
 @media screen and (max-width: 959.95px) and (min-width: 600px) {
   .grid {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, 1fr);  /* 5ブロックに分割する（itemは2ブロック使用する）*/
   }
 
-  .grid__item:nth-child(4n+1) {
+  .grid__item:nth-child(4n+1) { /* 1,5,9,13番目だけ3ブロック使用して右寄せ */
     display: flex;
     justify-content: flex-end;
     grid-column: auto / span 3;
   }
 
-  .grid__item:nth-child(4n+1)>.img-box {
+  .grid__item:nth-child(4n+1) > .img-box { /* 1,5,9,13番目のインナーは幅を3分の2にすると他と同じ大きさに見える */
     width: 66.6%;
   }
 
@@ -156,20 +156,20 @@ body {
 /* Responsive SP */
 @media screen and (max-width: 599.95px) {
   .grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr); /* 4ブロックに分割する */
   }
 
   .grid__item {
-    grid-column: auto/ span 3;
+    grid-column: auto / span 3; /* SP時は3ブロック使用する */
   }
 
-  .grid__item:nth-child(2n+1) {
+  .grid__item:nth-child(2n+1) { /* 奇数番目だけ4ブロック使用して右寄せ */
     display: flex;
     justify-content: flex-end;
     grid-column: auto / span 4;
   }
 
-  .grid__item:nth-child(2n+1)>.img-box {
+  .grid__item:nth-child(2n+1) > .img-box { /* 奇数番目のインナーは幅を4分の3にすると他と同じ大きさに見える */
     width: 75%;
   }
 
@@ -180,7 +180,7 @@ body {
   .logo-globe > span,
   .logo-globe > span::before,
   .logo-globe > span::after {
-    border-width: 1px;
+    border-width: 1px; /* SP時にロゴの線が太くなりすぎるので調整 */
   }
 }
 
